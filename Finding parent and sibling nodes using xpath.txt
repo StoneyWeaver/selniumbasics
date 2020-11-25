@@ -1,0 +1,10 @@
+Finding parent and sibling nodes using xpath
+
+Parent
+xpath-to-some-element//parent::<tag>
+
+Preceding sibling
+xpath-to-some-element//preceding-sibling::<tag>[#]
+
+Following sibling
+xpath-to-some-element//following-sibling::<tag>[#]
