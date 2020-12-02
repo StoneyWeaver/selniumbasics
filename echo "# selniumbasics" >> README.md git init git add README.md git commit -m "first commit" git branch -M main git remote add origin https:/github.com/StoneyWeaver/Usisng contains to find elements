@@ -1,4 +1,0 @@
-Usisng contains to find elements
-//tag[contains(attribute, 'value')]
-//div[@id='navbar']//a[contains(text(),'Login')]
-//div[@id='navbar']//a[contains(@class,'navbar-link') and contains(@href,'sign_in')]
