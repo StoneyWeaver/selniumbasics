@@ -33,12 +33,9 @@ public class WorkingWithElementsList {
 	public void testListofElements() throws Exception
 	{
 		boolean isCheckedradio = false;
-		
-		List<WebElement> radioButtons = driver.findElements(By.xpath("//input[contains(@type,'radio')and contains(@name,'cars')]"));
-				
+		List<WebElement> radioButtons = driver.findElements(By.xpath("//input[contains(@type,'radio')and contains(@name,'cars')]"));	
 		int size = radioButtons.size();
 		System.out.println("The number of radio buttons = "+size);
-		
 		for (int i = 0; i<size; i++)
 		{
 			isCheckedradio = radioButtons.get(i).isSelected();
@@ -49,24 +46,41 @@ public class WorkingWithElementsList {
 				TimeUnit.MILLISECONDS.sleep(1000);
 			}
 		}
+		
 		List<WebElement> checkBoxes =driver.findElements(By.xpath("//input[contains(@type,'checkbox') and contains(@name,'cars')]"));
 		int sizeCheck = checkBoxes.size();
 		boolean isCheckedCheck = false;
 		System.out.println("The number of checkboxes = "+sizeCheck);
-		for (int i =0; i<sizeCheck; i++)
+		for (int j =0; j<sizeCheck; j++)
 		{
-			isCheckedCheck = checkBoxes.get(i).isSelected();
+			isCheckedCheck = checkBoxes.get(j).isSelected();
 			
 			if (!isCheckedCheck)
 			{
-				checkBoxes.get(i).click();
+				checkBoxes.get(j).click();
 				TimeUnit.MILLISECONDS.sleep(1000);
 			}
 		}
 		
-		fail("Not yet implemented");
-	}
+		List<WebElement> dropBox = driver.findElements(By.xpath(".//*[@id='carselect']//option"));
+		int dropSize = dropBox.size();
+		boolean isBoxSelect = false;
+		System.out.println("The number of drop boxes = "+dropSize);
+		for (int k=0; k<dropSize; k++)
+		{
+			isBoxSelect = dropBox.get(k).isSelected();
+			
+			if (!isBoxSelect)
+			{
+				dropBox.get(k).click();
+				TimeUnit.MILLISECONDS.sleep(1000);
+			}
+		}
+
 	
+	fail("Not yet implemented");
+	
+	}
 	@After
 	public void tearDown() throws Exception {
 	}
